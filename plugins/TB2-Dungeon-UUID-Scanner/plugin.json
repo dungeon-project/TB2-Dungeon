@@ -1,0 +1,14 @@
+{
+  "pluginName": "TB2 Dungeon \u00b7 UUID Scanner",
+  "description": "TB2 Dungeon \u00b7 UUID Scanner 1.0.3 \u00b7 modular TB2 tools",
+  "version": "1.0.3",
+  "standalone": false,
+  "hideInNav": true,
+  "author": "Anonymous",
+  "icon": "FolderViewOutlined",
+  "tb2Dungeon": {
+    "id": "uuid-scanner",
+    "coreApi": 1,
+    "role": "cards"
+  }
+}

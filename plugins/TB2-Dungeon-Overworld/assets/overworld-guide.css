@@ -1,0 +1,21 @@
+.dungeon-scene .dungeon-controls { flex-wrap: wrap; }
+.dungeon-scene .dungeon-skip-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    color: #d0d0d0;
+    cursor: pointer;
+    font: 11px/1.4 "Cascadia Mono", Consolas, monospace;
+}
+.dungeon-scene .dungeon-skip-label input {
+    flex: none;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: #ffae60;
+}
+.dungeon-scene .dungeon-skip-status { color: #ffae60; }
+@media (max-width: 600px) {
+    .dungeon-scene .dungeon-skip-label { order: 3; width: 100%; }
+}

@@ -1,0 +1,107 @@
+/* Viewport overlay stays outside the transformed card and never captures controls. */
+.mitm-minotaur-scene {
+    position: fixed;
+    inset: auto 0 clamp(42px, 8vh, 80px);
+    width: 100%;
+    height: min(120px, 30vh);
+    pointer-events: none;
+    z-index: 45;
+}
+
+/* The static map emblem remains available when decorative motion is disabled. */
+@media (prefers-reduced-motion: reduce) {
+    .mitm-minotaur-scene { display: none; }
+}
+
+/* MITM: one scrolling surface, concise primary flow, real disclosure elements. */
+#tile-mitm-setup .cf-mitm-layout {
+    height: 100%; min-height: 0; padding: 20px 24px;
+    display: flex; flex-direction: column; gap: 12px;
+    overflow-y: auto; overflow-x: hidden; scrollbar-gutter: stable;
+    color: #d4d4d8; font: 11px/1.5 "JetBrains Mono", Consolas, monospace;
+}
+#tile-mitm-setup .cf-mitm-layout > * { flex-shrink: 0; min-width: 0; }
+#tile-mitm-setup p { margin: 0; overflow-wrap: anywhere; }
+#tile-mitm-setup strong { font-weight: 600; }
+#tile-mitm-setup .cf-mitm-header { display: flex; justify-content: space-between; gap: 12px; }
+#tile-mitm-setup .cf-mitm-header p { margin-top: 6px; color: #a1a1aa; }
+#tile-mitm-setup .cf-mitm-requirements {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+    padding: 10px 12px; border: 1px solid #303037; background: #0c0c0e;
+}
+#tile-mitm-setup .cf-mitm-requirement-list { display: flex; flex-wrap: wrap; gap: 8px 18px; flex: 1; }
+#tile-mitm-setup .cf-mitm-requirement-list > div { display: flex; flex-direction: column; gap: 2px; min-width: 60px; }
+#tile-mitm-setup .cf-mitm-requirement-list > div > span { color: #92929c; font-size: 10px; }
+#tile-mitm-setup .cf-mitm-requirement-list strong { font-size: 10px; white-space: nowrap; }
+#tile-mitm-setup .cf-mitm-write-help { flex-basis: 100%; color: #fcd34d; }
+#tile-mitm-setup .cf-mitm-button {
+    padding: 8px 12px; border: 1px solid #484850; background: #141417; color: #e4e4e7;
+    font: 10px/1.35 "JetBrains Mono", Consolas, monospace;
+    letter-spacing: .025em; cursor: pointer; white-space: normal; flex-shrink: 0;
+}
+#tile-mitm-setup .cf-mitm-button:hover:not(:disabled) { border-color: #adc6ff; }
+#tile-mitm-setup .cf-mitm-button:disabled { opacity: .4; cursor: not-allowed; }
+#tile-mitm-setup .cf-mitm-button-primary { color: #7dffa2; background: #102119; border-color: #408a58; }
+#tile-mitm-setup .cf-mitm-button-backup { color: #ffe19a; border-color: #786330; width: 100%; }
+#tile-mitm-setup .cf-mitm-card-heading { display: flex; align-items: start; justify-content: space-between; gap: 8px; }
+#mainCanvas #tile-mitm-setup h3 { font: 600 12px/1.4 "JetBrains Mono", Consolas, monospace; margin: 0; }
+#tile-mitm-setup .cf-mitm-tag { font-size: 9px; color: #a1a1aa; text-align: right; }
+#tile-mitm-setup .cf-mitm-columns { display: grid; grid-template-columns: minmax(0,.95fr) minmax(0,1.3fr); gap: 12px; margin-top: 10px; }
+#tile-mitm-setup .cf-mitm-card { min-width: 0; padding: 12px; border: 1px solid #2b2b31; background: #0c0c0e; }
+#tile-mitm-setup .cf-mitm-card > p { margin: 8px 0 10px; color: #a1a1aa; }
+#tile-mitm-setup .cf-mitm-setup-details > summary { color: #d4d4d8; font-weight: 600; }
+#tile-mitm-setup .cf-mitm-setup-state,
+#tile-mitm-setup .cf-mitm-endpoint-state { color: #92929c; font-weight: 400; font-size: 10px; margin-left: 8px; }
+#tile-mitm-setup .cf-mitm-field-label { display: block; font-size: 10px; color: #b9b9c1; margin-bottom: 5px; }
+#tile-mitm-setup .cf-mitm-server-set-label { display: block; margin-top: 9px; }
+#tile-mitm-setup input[type="file"] { display: block; width: 100%; max-width: 100%; font: inherit; font-size: 10px; color: #d4d4d8; }
+#tile-mitm-setup input[type="file"]::file-selector-button {
+    background: #1c1c21; color: #e4e4e7; border: 1px solid #484850;
+    font: inherit; padding: 5px 8px; margin-right: 8px; cursor: pointer;
+}
+#tile-mitm-setup .cf-mitm-file-name { display: block; margin-top: 5px; font-size: 10px; color: #a1a1aa; overflow-wrap: anywhere; }
+#tile-mitm-setup .cf-mitm-detail { padding-top: 8px; border-top: 1px solid #29292f; }
+#tile-mitm-setup .cf-mitm-card .cf-mitm-detail { margin-top: 8px; }
+#tile-mitm-setup details summary { cursor: pointer; font-size: 11px; line-height: 1.5; list-style-position: inside; }
+#tile-mitm-setup .cf-mitm-detail > p,
+#tile-mitm-setup .cf-mitm-detail > label { margin-top: 8px; }
+#tile-mitm-setup .cf-mitm-detail > p { color: #a1a1aa; font-size: 10px; }
+#tile-mitm-setup .cf-mitm-package-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+#tile-mitm-setup .cf-mitm-package-row p { color: #a1a1aa; font-size: 10px; }
+#tile-mitm-setup .cf-mitm-endpoints { background: #0c0c0e; padding: 10px 12px; border: 1px solid #303037; }
+#tile-mitm-setup .cf-mitm-checkbox { display: flex; align-items: center; gap: 8px; }
+#tile-mitm-setup .cf-mitm-checkbox input { margin: 0; }
+#tile-mitm-setup .cf-mitm-endpoint-grid { margin-top: 10px; display: grid; grid-template-columns: minmax(0,2fr) minmax(0,1fr); gap: 10px; }
+#tile-mitm-setup .cf-mitm-endpoint-grid input { width: 100%; box-sizing: border-box; background: #16161a; color: #e4e4e7; border: 1px solid #484850; padding: 7px 8px; font: 11px/1.4 "JetBrains Mono", Consolas, monospace; }
+#tile-mitm-setup .cf-mitm-endpoint-grid label { min-width: 0; }
+#tile-mitm-setup .cf-mitm-result { padding-top: 10px; border-top: 1px solid #303037; }
+#tile-mitm-setup .cf-mitm-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+#tile-mitm-setup .cf-mitm-prepared-hint { color: #7dffa2; font-size: 10px; display: none; }
+#tile-mitm-setup .cf-mitm-progress { margin-top: 10px; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 6px; font-size: 10px; }
+#tile-mitm-setup .cf-mitm-progress > div { padding: 6px 8px; }
+#tile-mitm-setup .cf-mitm-progress[hidden] { display: none !important; }
+#tile-mitm-setup .cf-mitm-success { margin-top: 10px; border: 1px solid #43865a; background: #15291b; padding: 14px; }
+#tile-mitm-setup .cf-mitm-success-heading { display: flex; justify-content: space-between; align-items: start; gap: 12px; color: #7dffa2; }
+#tile-mitm-setup .cf-mitm-success-heading > p { font: 700 18px/1.35 Inter, system-ui, sans-serif; }
+#tile-mitm-setup .cf-mitm-success-icon { width: 26px; height: 26px; flex-shrink: 0; }
+#tile-mitm-setup .cf-mitm-success > p { margin-top: 6px; color: #d1ded4; font-size: 11px; }
+#tile-mitm-setup .cf-mitm-success .cf-mitm-actions { margin-top: 12px; }
+#tile-mitm-setup .cf-mitm-success p.cf-mitm-next-help { font-size: 10px; color: #b4c8b9; }
+#tile-mitm-setup .cf-mitm-status { margin-top: 8px; font-size: 10px; color: #a1a1aa; }
+#tile-mitm-setup .js-mitm-error { margin-top: 10px; }
+#tile-mitm-setup[data-prepared="true"] .cf-mitm-package-row,
+#tile-mitm-setup[data-prepared="true"] .cf-mitm-result > .cf-mitm-actions > .js-mitm-apply { display: none; }
+#tile-mitm-setup[data-prepared="true"] .cf-mitm-prepared-hint { display: inline; }
+#tile-mitm-setup .cf-mitm-button:focus-visible,
+#tile-mitm-setup summary:focus-visible,
+#tile-mitm-setup input:focus-visible { outline: 2px solid #adc6ff; outline-offset: 2px; }
+@media (max-width: 800px) {
+    #tile-mitm-setup .cf-mitm-layout { padding: 16px; }
+    #tile-mitm-setup .cf-mitm-columns { grid-template-columns: minmax(0,1fr); }
+    #tile-mitm-setup .cf-mitm-package-row { flex-wrap: wrap; }
+}
+
+/* One focused CA selection; exports are separate and optional. */
+#tile-mitm-setup .cf-mitm-columns { grid-template-columns: minmax(0, 1fr); }
+#tile-mitm-setup [hidden] { display: none !important; }
+#tile-mitm-setup .js-mitm-ca-source { max-width: 100%; }

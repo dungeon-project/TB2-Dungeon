@@ -1,0 +1,40 @@
+        /* The content browser keeps its player visible while each bounded list scrolls. */
+        .tb2-browser { height: 100%; min-height: 0; padding: 24px 30px; display: flex;
+            flex-direction: column; gap: 10px; color: #d4d4d8; font-size: 13px; }
+        .tb2-browser h2 { font-size: clamp(22px, 3vw, 34px); font-weight: 800; color: #fff; }
+        .tb2-browser-toolbar, .tb2-browser-pages { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .tb2-browser button, .tb2-browser select, .tb2-browser input { border: 1px solid #52525b;
+            background: #18181b; border-radius: 6px; padding: 7px 10px; color: #e4e4e7; }
+        .tb2-browser button:disabled { opacity: .4; cursor: not-allowed; }
+        .tb2-browser button:hover:not(:disabled), .tb2-browser button:focus-visible { border-color: #9bd3ac; }
+        .tb2-browser input { min-width: 100px; flex: 1; }
+        .tb2-browser-columns { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+            gap: 14px; flex: 1; min-height: 0; }
+        .tb2-browser-pane { display: flex; flex-direction: column; min-height: 0; gap: 6px; min-width: 0; }
+        .tb2-browser-list { overflow-y: auto; min-height: 0; flex: 1; border: 1px solid #303036; border-radius: 8px; }
+        .tb2-browser .tb2-browser-row { display: block; text-align: left; width: 100%; border: 0;
+            border-bottom: 1px solid #303036; border-radius: 0; overflow-wrap: anywhere; }
+        .tb2-browser-row span, .tb2-browser-row small { display: block; }
+        .tb2-browser-row small { color: #a1a1aa; font-size: 11px; margin-top: 3px; }
+        .tb2-browser .tb2-browser-row[aria-pressed="true"] { background: #9bd3ac18; box-shadow: inset 3px 0 #9bd3ac; }
+        .tb2-browser-player { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+        .tb2-browser-player audio { flex: 1; min-width: 210px; height: 36px; }
+        .tb2-browser .tb2-browser-seek { display: none; }
+        .tb2-browser-title { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .tb2-browser details { flex-shrink: 0; font-size: 12px; }
+        .tb2-browser details pre { max-height: 90px; overflow: auto; white-space: pre-wrap; }
+        .tb2-browser-status { min-height: 18px; font-size: 12px; color: #b5d9bd; }
+        @media (max-width: 640px) {
+            .tb2-browser { padding: 14px; gap: 6px; font-size: 12px; overflow-y: auto; }
+            .tb2-browser-columns { grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(95px, 1fr) minmax(110px, 1.3fr); min-height: 225px; }
+            .tb2-browser button, .tb2-browser select, .tb2-browser input { padding: 6px; }
+            .tb2-browser-player audio { min-width: 100%; }
+            .tb2-browser .tb2-browser-seek { display: block; width: 100%; flex: none; height: 24px;
+                padding: 0; accent-color: #9bd3ac; }
+        }
+
+        .tb2-figure-status { white-space: pre-wrap; overflow-wrap: anywhere; max-height: 38vh; overflow: auto; }
+        .tb2-figure-tracks { max-height: 30vh; overflow: auto; padding-left: 22px; }
+        .tb2-figure-tracks li { margin: 8px 0; overflow-wrap: anywhere; }
+        .tb2-figure-tracks span { display: block; }
+

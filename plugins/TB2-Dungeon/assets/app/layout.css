@@ -1,0 +1,19 @@
+/* Shared dialog appearance; historical class also used by navigation and scanner notices. */
+
+        .tb2-figure-dialog { width: min(640px, 92vw); max-height: 85vh; overflow: auto; color: #e2e8f0; background: #111827; border: 1px solid #94a3b8; border-radius: 12px; padding: 20px; }
+        .tb2-figure-dialog::backdrop { background: rgba(0,0,0,.7); }
+        .tb2-figure-dialog input { max-width: 100%; margin: 8px 0; padding: 6px 9px; color: #e2e8f0; background: #09090b; border: 1px solid #52525b; border-radius: 6px; }
+        .tb2-figure-dialog button { margin: 3px; padding: 5px 9px; border: 1px solid #52525b; border-radius: 6px; background: #18181b; }
+        .tb2-figure-dialog button:disabled { opacity: .4; cursor: not-allowed; }
+        .tb2-figure-dialog button:not(:disabled):hover { background: #27272a; }
+/* Workflow controls wrap with their card instead of widening narrow viewports. */
+.tile select.cf-dump-button { max-width: 100%; min-width: 0; white-space: normal; }
+.js-enable-edit { flex-shrink: 0; }
+#tile-settings-editor > div > div:first-child,
+#tile-file-editor > div > div:first-child,
+#tile-wifi-manager > div > div:first-child { flex-wrap: wrap; gap: 8px; }
+#tile-settings-editor .settings-help { min-width: 0; }
+#tile-settings-editor .js-settings-lifecycle { display: block; width: 100%; }
+@media (max-width: 600px) {
+    #tile-settings-editor > div > .flex.items-center { flex-wrap: wrap; gap: 6px; }
+}

@@ -1,0 +1,14 @@
+{
+  "pluginName": "TB2 Dungeon \u00b7 USB Tools",
+  "description": "TB2 Dungeon \u00b7 USB Tools 1.0.2 \u00b7 modular TB2 tools",
+  "version": "1.0.2",
+  "standalone": false,
+  "hideInNav": true,
+  "author": "Anonymous",
+  "icon": "FolderViewOutlined",
+  "tb2Dungeon": {
+    "id": "usb-tools",
+    "coreApi": 1,
+    "role": "cards"
+  }
+}

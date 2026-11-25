@@ -1,0 +1,14 @@
+{
+  "pluginName": "TB2 Dungeon \u00b7 Image Tools",
+  "description": "TB2 Dungeon \u00b7 Image Tools 1.0.5 \u00b7 modular TB2 tools",
+  "version": "1.0.5",
+  "standalone": false,
+  "hideInNav": true,
+  "author": "Anonymous",
+  "icon": "FolderViewOutlined",
+  "tb2Dungeon": {
+    "id": "image-tools",
+    "coreApi": 1,
+    "role": "cards"
+  }
+}

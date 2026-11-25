@@ -1,0 +1,47 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; background: #000; }
+.dungeon-scene { min-height: 100dvh; overflow: auto; background: #000; color: #fff; color-scheme: dark; }
+.dungeon-scene:focus { outline: none; }
+.dungeon-layout {
+    --pixel: clamp(2px, 0.4vw, 4px);
+    width: calc(160 * var(--pixel));
+    min-height: 100dvh;
+    margin-inline: auto;
+    padding-block: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.dungeon-stage { position: relative; flex: none; width: 100%; height: calc(164 * var(--pixel)); }
+.dungeon-fire {
+    position: absolute;
+    top: calc(36 * var(--pixel));
+    width: calc(16 * var(--pixel));
+    height: calc(16 * var(--pixel));
+    opacity: 0;
+    background: url("return-fire.svg") 0 0 / 300% 100% no-repeat;
+    image-rendering: pixelated;
+    transition: opacity 300ms linear;
+    animation: dungeon-flame 540ms linear infinite;
+}
+.dungeon-fire-left { left: calc(27 * var(--pixel)); }
+.dungeon-fire-right { left: calc(118 * var(--pixel)); animation-delay: -180ms; }
+.dungeon-scene[data-fire="visible"] .dungeon-fire { opacity: 1; }
+.dungeon-scene[data-phase="ready"] .dungeon-fire { transition: none; }
+@keyframes dungeon-flame {
+    0%, 32.99% { background-position: 0 0; }
+    33%, 65.99% { background-position: 50% 0; }
+    66%, 100% { background-position: 100% 0; }
+}
+.dungeon-controls { display: flex; justify-content: space-between; gap: 12px; align-items: center; min-height: 38px; padding-inline: 10px; }
+.dungeon-controls[hidden] { display: flex; visibility: hidden; }
+.dungeon-back { padding: 10px 0; border: 0; background: transparent; color: #888b86; font: 11px/1.4 "Cascadia Mono", Consolas, monospace; cursor: pointer; }
+.dungeon-back:hover { color: #fff; }
+.language-switcher { display: flex; margin: 0; border: 0; background: transparent; padding: 0; }
+.language-switcher button { min-width: 29px; padding: 6px 3px; border: 0; border-radius: 0; background: transparent; color: #888b86; font: 10px/1.4 "Cascadia Mono", Consolas, monospace; cursor: pointer; }
+.language-switcher button[aria-pressed="true"] { color: #ffae60; text-decoration: underline; text-underline-offset: 4px; }
+.language-switcher button:hover { background: #171717; color: #fff; }
+.dungeon-scene :focus-visible { outline: 1px solid #ffae60; outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) {
+    .dungeon-fire { transition: none; animation: none; }
+}

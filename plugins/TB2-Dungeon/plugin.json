@@ -1,0 +1,14 @@
+{
+  "pluginName": "TB2 Dungeon",
+  "description": "TB2 Dungeon 1.0.10 \u00b7 modular TB2 tools",
+  "version": "1.0.10",
+  "standalone": false,
+  "author": "Anonymous",
+  "icon": "FolderViewOutlined",
+  "tb2Dungeon": {
+    "id": "core",
+    "coreApi": 1,
+    "role": "core"
+  },
+  "teddyCloudSection": "tonieboxes"
+}

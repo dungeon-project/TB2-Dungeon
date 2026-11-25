@@ -1,0 +1,139 @@
+/* Keep the extra selector and the complete UUID readable on narrow cards. */
+#tile-cracker-pane #ci-foundUuid { flex-basis: 20ch; min-width: 20ch; }
+#tile-cracker-pane .ci-setting-row select { min-width: 0; }
+#tile-cracker-pane .ci-performance { overflow-wrap: anywhere; }
+#tile-cracker-pane #uuid-ca-source { overflow-wrap: anywhere; }
+/* Expansion notices share the card's compact dark styling and never suspend GPU work. */
+.ci-expansion-notice { width: min(32rem, calc(100vw - 2rem)); margin: auto; padding: 1.25rem; color: #e4e4e7; background: #18181b; border: 1px solid #86b99b; border-radius: .5rem; }
+.ci-expansion-notice::backdrop { background: rgb(0 0 0 / 65%); }
+.ci-expansion-notice h2 { font-size: 1.1rem; margin-bottom: .75rem; }
+.ci-expansion-notice p { font-size: .9rem; line-height: 1.5; margin-bottom: 1rem; }
+.ci-expansion-notice > div { display: flex; gap: .5rem; flex-wrap: wrap; }
+.ci-expansion-notice button { min-height: 44px; padding: .5rem .85rem; border: 1px solid #52525b; border-radius: .25rem; font: 12px monospace; cursor: pointer; }
+.ci-expansion-notice button:hover, .ci-expansion-notice button:focus-visible { border-color: #a7d7b5; color: #fff; outline: 2px solid transparent; }
+@media (max-width: 600px) {
+    #tile-cracker-pane .ci-setting-row { gap: .25rem; }
+    #tile-cracker-pane .ci-setting-row select { flex-basis: 100%; width: 100%; }
+}
+
+/* Keep scan actions compact alongside Start and Pause on narrow cards. */
+#tile-cracker-pane .cf-dump-button { padding: 8px 10px; font-size: 10px; }
+
+        .cracker-pane {
+            margin-top: 10px;
+            border: 1px solid #355b2f;
+            background: #101d0f;
+            padding: 10px 12px;
+            color: #bfeab3;
+        }
+
+        .cracker-pane.active {
+            animation: pulseGreen 1.4s infinite ease-in-out;
+        }
+
+        .cracker-host {
+            width: 100%;
+            height: 100%;
+            border: 1px solid #2a2a2a;
+            background: #090909;
+        }
+
+        .cracker-host iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            background: #090909;
+        }
+
+        .ci-meter {
+            height: 14px;
+            border: 1px solid #9fc2ff66;
+            border-radius: 999px;
+            overflow: hidden;
+            background: #0a1328;
+            box-shadow: inset 0 1px 5px #01040d8a;
+            margin-top: 2px;
+        }
+
+        .ci-meter > div {
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, #6482ff, #85d1ff 58%, #ffd08d);
+            transition: width 120ms linear;
+        }
+
+        .ci-kv {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 8px;
+            margin-top: 2px;
+        }
+
+        .ci-kv div {
+            border: 1px solid #7ca7ff55;
+            border-radius: 10px;
+            padding: 8px;
+            background: #101936c9;
+        }
+
+        .ci-log-ok { color: #8ee7ff; }
+        .ci-log-bad { color: #ff8b8b; }
+        .ci-log-warn { color: #ffcf70; }
+
+        #ci-current.cipher-active { letter-spacing: 0.02em; }
+
+        #ci-current .uuid-char {
+            position: relative;
+            display: inline-block;
+            min-width: 0.62em;
+            text-align: center;
+            line-height: 1;
+            vertical-align: middle;
+        }
+
+        #ci-current .uuid-fx {
+            color: transparent;
+            text-shadow: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 1em;
+        }
+
+        #ci-current .uuid-fx .uuid-layer {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 1em;
+            opacity: 0.2;
+            filter: blur(0.5px);
+            pointer-events: none;
+            animation-delay: var(--fx-delay, 0ms);
+        }
+
+        #ci-current .uuid-fx .l0 { color: #8fdfff; animation: uuidCipherLayerA 0.45s steps(2, end) infinite; }
+        #ci-current .uuid-fx .l1 { color: #ffd8a8; opacity: 0.14; animation: uuidCipherLayerB 0.38s steps(2, end) infinite; }
+        #ci-current .uuid-fx .l2 { color: #a6b9ff; opacity: 0.1; animation: uuidCipherLayerC 0.32s steps(2, end) infinite; }
+
+        #ci-current.cipher-frozen .uuid-fx .uuid-layer { animation-play-state: paused !important; }
+
+        @keyframes uuidCipherLayerA {
+            0%   { transform: translate(-0.03em, -0.02em); }
+            50%  { transform: translate(0.02em, 0.01em); }
+            100% { transform: translate(-0.01em, 0.02em); }
+        }
+
+        @keyframes uuidCipherLayerB {
+            0%   { transform: translate(0.04em, -0.03em); }
+            50%  { transform: translate(-0.03em, 0.02em); }
+            100% { transform: translate(0.02em, -0.01em); }
+        }
+
+        @keyframes uuidCipherLayerC {
+            0%   { transform: translate(-0.02em, 0.03em); }
+            50%  { transform: translate(0.03em, -0.02em); }
+            100% { transform: translate(-0.01em, 0.01em); }
+        }

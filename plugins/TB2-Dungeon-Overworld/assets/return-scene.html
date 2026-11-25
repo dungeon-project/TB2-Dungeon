@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dungeon entrance</title>
+  <link rel="stylesheet" href="return-scene.css">
+</head>
+<body>
+  <section id="dungeon-scene" class="dungeon-scene dungeon-return" data-phase="darkening" tabindex="-1">
+    <div id="dungeon-return" class="dungeon-layout">
+      <div class="dungeon-stage">
+        <div class="dungeon-fire dungeon-fire-left" aria-hidden="true"></div>
+        <div class="dungeon-fire dungeon-fire-right" aria-hidden="true"></div>
+      </div>
+      <div class="dungeon-controls" hidden>
+        <button type="button" class="dungeon-back">Back to Overworld</button>
+        <div class="language-switcher" role="group" aria-label="Language">
+          <button type="button" data-lang="de" lang="de" aria-label="Deutsch">DE</button>
+          <button type="button" data-lang="en" lang="en" aria-label="English" aria-pressed="true">EN</button>
+          <button type="button" data-lang="fr" lang="fr" aria-label="Français">FR</button>
+          <button type="button" data-lang="es" lang="es" aria-label="Español">ES</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

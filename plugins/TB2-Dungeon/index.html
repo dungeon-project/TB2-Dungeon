@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>TB2 Dungeon 1.0.10</title>
+    <script src="./delivery.js"></script>
+    <link rel="stylesheet" href="./plugin-support.css">
+    <script src="./plugin-support.js"></script>
+    <script src="./tc-image-storage.js"></script>
+    <script src="./assets/core/startup.js"></script>
+    <script id="tb2-ui-mode" src="./assets/core/ui-mode.js"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Space+Grotesk:wght@500;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config" src="./assets/core/theme.js"></script>
+    <script src="./assets/wifi-manager.js"></script>
+    <script src="./assets/offline-mode.js"></script>
+    <script src="./assets/lifecycle.js"></script>
+    <script src="./assets/box-identity.js"></script>
+    <script src="./assets/image-manager.js"></script>
+    <script src="./assets/image-manager-backup.js"></script>
+    <script src="./assets/image-manager-ui.js"></script>
+    <link rel="stylesheet" href="./assets/image-manager.css" />
+    <script id="firmware-0408-core" src="./assets/core/firmware-image.js"></script>
+    <script id="core-flasher-dump-ui" src="./assets/core/dump-ui.js"></script>
+    <link rel="stylesheet" href="./assets/app/styles.css">
+    <link rel="stylesheet" href="./assets/app/layout.css">
+</head>
+
+<body class="font-body-md selection:bg-primary/30">
+    <div class="production-version">TB2 Dungeon 1.0.10</div>
+    <div class="developer-mode-banner dev-only">
+        Advanced controls · <a href="?dev=0">Switch to standard view</a>
+    </div>
+    <main class="viewport">
+        <div class="layer-scene" id="mainCanvas"></div>
+    </main>
+    <script src="./assets/core/sparse-image.js"></script>
+    <script src="./assets/core/littlefs.js"></script>
+    <script id="fliptdi-webusb-v12" src="./assets/core/fliptdi.js"></script>
+    <script src="./assets/serprog.js"></script>
+    <!-- Card runtime is loaded from the manifest by the bootstrap. -->
+    <script src="./assets/app/card-registry.js"></script>
+    <script src="./assets/app/card-manifest.js"></script>
+    <script src="./assets/app/app-context.js"></script>
+    <script src="./assets/app/extensions.js"></script>
+    <script src="./assets/app/bootstrap.js"></script>
+
+</body>
+
+</html>

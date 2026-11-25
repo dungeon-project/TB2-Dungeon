@@ -1,0 +1,61 @@
+/* Card-owned Dump / Flash presentation, shared by standalone and plugin. */
+#tile-interface-options .cf-dump-layout { display:flex; flex-direction:column; gap:14px; min-height:0; overflow-y:auto; }
+#tile-interface-options .cf-dump-layout [hidden] { display:none !important; }
+#tile-interface-options .cf-dump-header h1 { margin:0 !important; }
+#tile-interface-options .cf-dump-subtitle { margin:5px 0 0; color:#a1a1aa; font:12px/1.55 Inter,system-ui,sans-serif; }
+#tile-interface-options .cf-dump-context { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px 20px; padding:12px 14px; background:#17171c; border:1px solid #323239; border-radius:6px; }
+#tile-interface-options .cf-dump-context-info { min-width:0; flex:1 1 240px; color:#d4d4d8; font:11px/1.6 'JetBrains Mono',Consolas,monospace; overflow-wrap:anywhere; }
+#tile-interface-options .cf-dump-label { color:#92929c; margin-right:7px; }
+#tile-interface-options .cf-dump-dot { color:#555561; padding:0 6px; }
+#tile-interface-options .cf-dump-modes { display:flex; flex-wrap:wrap; gap:12px; font:11px/1.5 Inter,system-ui,sans-serif; color:#e4e4e7; }
+#tile-interface-options .cf-dump-modes label { display:flex; align-items:center; gap:6px; cursor:pointer; }
+#tile-interface-options .cf-dump-modes input { margin:0; width:14px; height:14px; accent-color:#adc6ff; }
+#tile-interface-options .cf-dump-cards { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+#tile-interface-options .cf-dump-card { min-width:0; display:flex; flex-direction:column; gap:10px; padding:16px; background:#0d0d10; border:1px solid #303038; border-radius:6px; }
+#mainCanvas #tile-interface-options .cf-dump-card h2 { font:600 16px/1.4 Inter,system-ui,sans-serif !important; margin:0 !important; letter-spacing:0 !important; }
+#tile-interface-options .cf-dump-card-head { display:flex; align-items:center; flex-wrap:wrap; justify-content:space-between; gap:8px; }
+#tile-interface-options .cf-dump-tag { padding:3px 6px; border:1px solid #3c4659; color:#bbd1fb; border-radius:4px; font:9px/1.4 'JetBrains Mono',Consolas,monospace; }
+#tile-interface-options .cf-dump-file { color:#e4e4e7; font:12px/1.45 'JetBrains Mono',Consolas,monospace; overflow-wrap:anywhere; }
+#tile-interface-options .cf-dump-muted { color:#a1a1aa; font:11px/1.5 Inter,system-ui,sans-serif; margin:0; overflow-wrap:anywhere; }
+#tile-interface-options .cf-dump-small { color:#95959f; font:10px/1.5 'JetBrains Mono',Consolas,monospace; margin:0; overflow-wrap:anywhere; }
+#tile-interface-options .cf-dump-note { font:11px/1.55 Inter,system-ui,sans-serif; color:#a1a1aa; margin:0; }
+#tile-interface-options .cf-dump-actions { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+#tile-interface-options .cf-dump-card-bottom { margin-top:auto; padding-top:4px; }
+#tile-interface-options .cf-dump-button { box-sizing:border-box; font:600 11px/1.4 Inter,system-ui,sans-serif; padding:9px 12px; border:1px solid #484852; border-radius:4px; background:#19191f; color:#e4e4e7; cursor:pointer; }
+#tile-interface-options .cf-dump-button:hover:not(:disabled) { border-color:#adc6ff; }
+#tile-interface-options .cf-dump-button-primary { background:#14263f; border-color:#6081b7; color:#c9ddff; }
+#tile-interface-options .cf-dump-button-backup { background:#112319; border-color:#41885b; color:#b9f7cc; }
+#tile-interface-options .cf-dump-button:disabled { opacity:.4; cursor:not-allowed; }
+#tile-interface-options .cf-dump-reason { color:#b5a275; font:10px/1.4 Inter,system-ui,sans-serif; margin:5px 0 0; overflow-wrap:anywhere; }
+#tile-interface-options .cf-dump-reason:empty { display:none; }
+#tile-interface-options .cf-dump-hardware-note { color:#a6bedf; background:#101a27; border:1px solid #2c415d; border-radius:4px; padding:9px 12px; font:11px/1.5 Inter,system-ui,sans-serif; }
+#tile-interface-options .cf-dump-secondary { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; border-top:1px solid #2e2e37; padding-top:12px; }
+#tile-interface-options .cf-dump-secondary > div { min-width:0; }
+#tile-interface-options .cf-dump-secondary p { margin-top:6px; }
+#tile-interface-options .cf-dump-operation { padding:14px 16px; border:1px solid #3d5476; background:#111c2c; border-radius:6px; }
+#tile-interface-options .cf-dump-operation[data-state="success"] { background:#13261a; border-color:#3c7651; }
+#tile-interface-options .cf-dump-operation[data-state="error"] { background:#2b1417; border-color:#83545d; }
+#tile-interface-options .cf-dump-operation[data-state="warning"],
+#tile-interface-options .cf-dump-operation[data-state="cancelled"] { background:#272114; border-color:#796639; }
+#tile-interface-options .cf-dump-operation-head { display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+#tile-interface-options .cf-dump-operation-title { font:600 13px/1.4 Inter,system-ui,sans-serif; color:#e4e4e7; }
+#tile-interface-options .cf-dump-operation-badge { font:9px/1.5 'JetBrains Mono',Consolas,monospace; color:#b7c4d9; }
+#tile-interface-options .cf-dump-operation-message { margin:7px 0 0; color:#e4e4e7; font:12px/1.5 Inter,system-ui,sans-serif; overflow-wrap:anywhere; }
+#tile-interface-options .cf-dump-progress-track { height:5px; background:#262e3c; border-radius:3px; overflow:hidden; margin-top:10px; }
+#tile-interface-options .cf-dump-progress { height:100%; width:0; background:#adc6ff; }
+#tile-interface-options .cf-dump-physical-warning { border:1px solid #855457; color:#f3bfc1; padding:10px 12px; border-radius:4px; background:#291417; font:11px/1.5 Inter,system-ui,sans-serif; }
+#tile-interface-options .cf-dump-dev { font:10px/1.5 'JetBrains Mono',Consolas,monospace; color:#a1a1aa; border-top:1px solid #2e2e37; padding-top:10px; }
+#tile-interface-options .cf-dump-button:focus-visible { outline:2px solid #adc6ff; outline-offset:2px; }
+@media(max-width:800px) {
+    #tile-interface-options .cf-dump-cards, #tile-interface-options .cf-dump-secondary { grid-template-columns:minmax(0,1fr); }
+    #tile-interface-options .cf-dump-card { padding:12px; }
+}
+
+#tile-interface-options .cf-dump-layout > * { flex-shrink:0; min-width:0; }
+
+/* Keep the primary actions readable without narrowing the card contents. */
+#tile-interface-options .cf-dump-layout { padding: 24px; }
+#tile-interface-options .cf-dump-header h1 { font-size: clamp(28px, 4vw, 48px); }
+@media (max-width: 800px) {
+    #tile-interface-options .cf-dump-layout { padding: 20px; }
+}

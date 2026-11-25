@@ -1,0 +1,42 @@
+.dungeon-overworld {
+    width: 100vw;
+    max-width: none;
+    height: 100dvh;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: #f7f5ee;
+}
+.dungeon-overworld[open] { display: flex; flex-direction: column; }
+.dungeon-overworld--returning,
+.dungeon-overworld--returning iframe { background: #000; }
+.dungeon-overworld--entrance-loading iframe { visibility: hidden; }
+.dungeon-overworld::backdrop { background: #03070c; }
+.dungeon-overworld__error {
+    position: absolute;
+    z-index: 1;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(440px, calc(100% - 32px));
+    padding: 12px;
+    border: 1px solid #52616d;
+    border-radius: 5px;
+    background: #101318;
+    color: #e3e9ef;
+    text-align: center;
+}
+.dungeon-overworld__error[hidden] { display: none; }
+.dungeon-overworld__error p { margin: 0 0 12px; font-size: .78rem; color: #ffb6a4; }
+.dungeon-overworld [data-recovery] {
+    flex: none;
+    padding: 8px 12px;
+    border: 1px solid #adc5db;
+    border-radius: 5px;
+    background: #17232d;
+    color: #e3e9ef;
+    cursor: pointer;
+}
+.dungeon-overworld [data-recovery]:focus-visible { outline: 2px solid #ffcb55; outline-offset: 2px; }
+.dungeon-overworld iframe { display: block; flex: 1; width: 100%; min-height: 0; border: 0; background: #f7f5ee; }

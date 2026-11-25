@@ -1,0 +1,14 @@
+{
+  "pluginName": "TB2 Dungeon \u00b7 Overworld",
+  "description": "TB2 Dungeon \u00b7 Overworld 1.2.22 \u00b7 modular TB2 tools",
+  "version": "1.2.22",
+  "standalone": false,
+  "hideInNav": true,
+  "author": "Anonymous",
+  "icon": "FolderViewOutlined",
+  "tb2Dungeon": {
+    "id": "overworld",
+    "coreApi": 1,
+    "role": "entry"
+  }
+}

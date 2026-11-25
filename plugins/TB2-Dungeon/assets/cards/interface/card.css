@@ -1,0 +1,12 @@
+/* Styles owned by this card. Shared controls and category colors stay central. */
+
+        /* Keep adapter settings readable on phones without changing other card layouts. */
+        #tile-interface .cf-interface-grid { margin-top: 2rem; }
+        #tile-interface .cf-interface-config { min-width: 0; }
+        #tile-interface .js-generic-reader-config button:disabled { opacity: .35; cursor: not-allowed; }
+
+/* Hardware identity stays compact beside connection and image controls. */
+.cf-box-identity { display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin:8px 0; font-size:12px; }
+.cf-box-identity[hidden] { display:none; }
+.cf-box-identity small { color:#a1a1aa; }
+.cf-box-identity .layer-link { margin-left:auto; }
